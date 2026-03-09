@@ -1,0 +1,47 @@
+.app-container {
+  display: flex;
+}
+
+.content {
+  width: 100%;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 15px;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.post-card {
+  min-width: 0rem;
+}
+
+.reaction {
+  margin-top: 20px;
+  background-color: hsla(141, 78%, 55%, 0.618);
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.create-post {
+  width: 80%;
+  margin-top: 50px;
+  margin-left: 10%;
+}
+
+.welcome {
+  margin-top: 50px;
+  font-family: Josefin Sans;
+}
+
+.spinner {
+  margin: 10% 0;
+}
