@@ -6,6 +6,32 @@
   width: 100%;
 }
 
+.logo3d {
+  font-size: 30px;
+  font-weight: bold;
+  color: #00eaff;
+  letter-spacing: 2px;
+
+  text-shadow:
+    1px 1px 0 #000,
+    2px 2px 0 #000,
+    3px 3px 0 #000,
+    4px 4px 0 #000,
+    5px 5px 10px rgba(0, 0, 0, 0.5);
+
+  transition: 0.3s;
+}
+
+.logo3d:hover {
+  transform: translateY(-3px);
+  text-shadow:
+    1px 1px 0 #000,
+    2px 2px 0 #000,
+    3px 3px 0 #000,
+    4px 4px 0 #000,
+    6px 6px 15px rgba(0, 0, 0, 0.7);
+}
+
 .header {
   position: sticky;
   top: 0;
@@ -13,14 +39,133 @@
   padding: 15px;
 }
 
+.header {
+  background: #1f1f2e;
+  padding: 10px;
+  box-shadow:
+    6px 6px 12px rgba(0, 0, 0, 0.6),
+    -4px -4px 10px rgba(255, 255, 255, 0.05);
+}
+
+.header .nav-link {
+  border-radius: 8px;
+  color: #e5eff0;
+  padding: 6px 12px;
+  transition: 0.2s;
+}
+
+.header .nav-link:hover {
+  background: #a7efff;
+  color: #1e1e2f;
+  box-shadow:
+    inset 3px 3px 6px rgba(0, 0, 0, 0.6),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.05);
+}
+
+.header input {
+  border-radius: 8px;
+  background: #a7efff;
+  box-shadow:
+    inset 3px 3px 6px rgba(0, 0, 0, 0.6),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.05);
+  border: none;
+}
+
+.nav-link.active {
+  background: #a7efff;
+  color: #1e1e2f;
+  box-shadow:
+    inset 4px 4px 8px rgba(0, 0, 0, 0.5),
+    inset -3px -3px 6px rgba(255, 255, 255, 0.1);
+}
+
+.loginBtn,
+.signBtn {
+  border-radius: 8px;
+  box-shadow:
+    inset 3px 3px 6px rgba(0, 0, 0, 0.6),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.05);
+  border: none;
+  transition: 0.2s;
+}
+
+.loginBtn {
+  background-color: #68ea12;
+}
+
+.signBtn {
+  background-color: #e9fb1d;
+}
+
+.loginBtn:hover,
+.signBtn:hover {
+  background: #868a8b;
+  color: #f6f7f3;
+}
+
 .sidebar {
+  height: 100vh;
   position: sticky;
   top: 0;
-  height: 100vh;
+  background: #1e1e2f;
+
+  /* soft shadow */
+  box-shadow:
+    6px 6px 12px rgba(0, 0, 0, 0.5),
+    -4px -4px 10px rgba(255, 255, 255, 0.05);
+}
+
+.sidebar .nav-link {
+  width: 100%;
+  text-align: left;
+
+  padding: 10px 15px;
+  /* same padding */
+  margin-bottom: 10px;
+
+  border-radius: 10px;
+  background: #2a2a40;
+  color: white;
+  box-shadow:
+    4px 4px 8px rgba(0, 0, 0, 0.5),
+    -3px -3px 6px rgba(255, 255, 255, 0.05);
+  transition: 0.2s;
+}
+
+.sidebar .nav-link:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    6px 6px 12px rgba(0, 0, 0, 0.6),
+    -4px -4px 8px rgba(255, 255, 255, 0.08);
+}
+
+.sidebar .nav-link.active {
+  background: #a7efff;
+  color: #1e1e2f;
+  box-shadow:
+    inset 4px 4px 8px rgba(0, 0, 0, 0.5),
+    inset -3px -3px 6px rgba(255, 255, 255, 0.1);
 }
 
 .post-card {
-  min-width: 0rem;
+  margin-top: 5px;
+  margin-left: 5px;
+  border-radius: 5px;
+  padding: 15px;
+  background: #a7efff;
+  box-shadow:
+    5px 5px 5px rgba(0, 0, 0, 0.15),
+    -2px -5px 5px rgba(255, 255, 255, 0.8);
+}
+
+.card-body {
+  padding: 10px;
+}
+
+.glassmorphism {
+  box-shadow:
+    inset 4px 4px 8px rgba(0, 0, 0, 0.15),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.7);
 }
 
 .reaction {
@@ -31,10 +176,56 @@
   display: flex;
 }
 
+.deleteBtn {
+  font-size: 20px;
+  margin-right: 10px;
+  color: red;
+}
+
+.deleteBtn:hover {
+  color: hsl(0, 55%, 46%);
+}
+
 .create-post {
-  width: 80%;
-  margin-top: 50px;
-  margin-left: 10%;
+  width: 99%;
+  height: auto;
+  padding: 30px;
+  background: #a7efff;
+
+  box-shadow:
+    6px 6px 12px rgba(0, 0, 0, 0.6),
+    -4px -4px 10px rgba(255, 255, 255, 0.05);
+}
+
+.create-post input,
+.create-post textarea {
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  background: #e5eff0;
+
+  /* pressed input effect */
+  box-shadow:
+    inset 4px 4px 8px rgba(0, 0, 0, 0.15),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.7);
+}
+
+.create-post input:focus,
+.create-post textarea:focus {
+  outline: none;
+}
+
+.create-post button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #3c8e06;
+  color: white;
+
+  box-shadow:
+    4px 4px 10px rgba(0, 0, 0, 0.2),
+    -4px -4px 10px rgba(255, 255, 255, 0.6);
 }
 
 .welcome {
@@ -44,4 +235,23 @@
 
 .spinner {
   margin: 10% 0;
+}
+
+.dashboard-box {
+  background: #a7efff;
+  padding: 20px;
+  height: 90vh;
+
+  box-shadow:
+    6px 6px 12px rgba(0, 0, 0, 0.6),
+    -4px -4px 10px rgba(255, 255, 255, 0.05);
+}
+
+.dashboard-box .btn {
+  border-radius: 8px;
+  color: #010103;
+
+  box-shadow:
+    4px 4px 8px rgba(0, 0, 0, 0.6),
+    -2px -2px 5px rgba(255, 255, 255, 0.05);
 }

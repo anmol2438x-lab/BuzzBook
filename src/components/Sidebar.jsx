@@ -1,99 +1,75 @@
-const Sidebar = ({ selectedTab, setSelectedTab }) => {
-  const handleTabChange = (tab) => {
-    setSelectedTab(tab);
-  };
+import { NavLink } from "react-router-dom";
 
+const Sidebar = () => {
   return (
     <div
       className="d-flex flex-column flex-shrink-0 p-3 text-bg-dark sidebar"
       style={{ width: "200px" }}
     >
-      {/* Logo Section */}
-      <button
-        type="button"
-        onClick={() => handleTabChange("Home")}
-        className="d-flex align-items-center mb-3 text-white text-decoration-none bg-transparent border-0"
-      >
-        <span className="fs-4">Sidebar</span>
-      </button>
+      <span className=" logo3d">BuzzBook</span>
 
       <hr />
 
       <ul className="nav nav-pills flex-column mb-auto">
         <li className="nav-item">
-          <button
-            type="button"
-            className={`nav-link text-white ${
-              selectedTab === "Home" ? "active" : ""
-            }`}
-            onClick={() => handleTabChange("Home")}
+          <NavLink
+            to="/"
+            end
+            className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
           >
             Home
-          </button>
+          </NavLink>
         </li>
 
         <li className="nav-item">
-          <button
-            type="button"
-            className={`nav-link text-white ${
-              selectedTab === "CreatePost" ? "active" : ""
-            }`}
-            onClick={() => handleTabChange("CreatePost")}
-          >
-            Create Post
-          </button>
-        </li>
-
-        <li className="nav-item">
-          <button
-            type="button"
-            className={`nav-link text-white ${
-              selectedTab === "Dashboard" ? "active" : ""
-            }`}
-            onClick={() => handleTabChange("Dashboard")}
+          <NavLink
+            to="/dashboard"
+            className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
           >
             Dashboard
-          </button>
+          </NavLink>
         </li>
 
         <li className="nav-item">
-          <button
-            type="button"
-            className={`nav-link text-white ${
-              selectedTab === "Reels" ? "active" : ""
-            }`}
-            onClick={() => handleTabChange("Reels")}
+          <NavLink
+            to="/saved"
+            className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
           >
-            Reels
-          </button>
+            Saved
+          </NavLink>
         </li>
 
         <li className="nav-item">
-          <button
-            type="button"
-            className={`nav-link text-white ${
-              selectedTab === "Help" ? "active" : ""
-            }`}
-            onClick={() => handleTabChange("Help")}
+          <NavLink
+            to="/settings"
+            className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
+          >
+            Settings
+          </NavLink>
+        </li>
+
+        <li className="nav-item">
+          <NavLink
+            to="/help"
+            className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
           >
             Help
-          </button>
+          </NavLink>
         </li>
       </ul>
 
       <hr />
 
-      {/* Profile Section */}
-      <div className="mt-auto text-white">
+      <div className="mt-auto">
         <div className="d-flex align-items-center">
           <img
-            src="https://github.com/mdo.png"
+            src="public\Ak img.png"
             alt="profile"
             width="32"
             height="32"
             className="rounded-circle me-2"
           />
-          <strong>mdo</strong>
+          <strong>Λnmol</strong>
         </div>
       </div>
     </div>

@@ -3,8 +3,8 @@ import { BiDislike, BiLike, BiSolidLike } from "react-icons/bi";
 import { FaShare } from "react-icons/fa";
 import { GoCommentDiscussion } from "react-icons/go";
 import { LuSaveAll } from "react-icons/lu";
-import { MdDeleteSweep } from "react-icons/md";
 import { RiMenuUnfoldLine } from "react-icons/ri";
+import { TiDelete } from "react-icons/ti";
 import LoadingSpinner from "../components/LodingSpinner";
 import WelcomeMsg from "../components/welcomeMsg";
 import { PostListContext } from "../store/PostListContext";
@@ -29,18 +29,22 @@ const PostList = () => {
       )}
       {!fetching &&
         postList.map((post) => (
-          <div key={post.id} className="card m-3 p-3 post-card">
-            <span
-              className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-              style={{ cursor: "pointer" }}
-              onClick={() => deletePost(post.id)}
-            >
-              <MdDeleteSweep />
-            </span>
-            <h5>{post.title}</h5>
-            <p>{post.body}</p>
+          <div key={post.id} className="card m-2  post-card">
+            <div className="glassmorphism card-body">
+              <h5 className="d-flex justify-content-between align-items-center">
+                {post.title}{" "}
+                <span
+                  className="deleteBtn "
+                  style={{ cursor: "pointer" }}
+                  onClick={() => deletePost(post.id)}
+                >
+                  <TiDelete />
+                </span>
+              </h5>
+              <p>{post.body}</p>
+              <p>User ID: {"@fbxz_" + post.userId}</p>
+            </div>
 
-            <p>User ID: {"@" + post.userId}</p>
             <p>
               <BiSolidLike />
               <span className="ms-2">
@@ -53,7 +57,10 @@ const PostList = () => {
                   #{tag}
                 </span>
               ))}
-              <div className="alert alert-info reaction" role="alert">
+              <div
+                className="alert alert-info reaction glassmorphism"
+                role="alert"
+              >
                 <span>
                   {" "}
                   <BiLike />

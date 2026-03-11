@@ -17,7 +17,7 @@ function App() {
           selectedTab={selectedTab}
           setSelectedTab={setSelectedTab}
         ></Sidebar>
-        <div className="content">
+        <div className="content glassmorphism">
           <Header />
           <Outlet></Outlet>
           <Footer />

@@ -1,9 +1,12 @@
 import { useContext, useRef } from "react";
 import { MdAddTask } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 import { PostListContext } from "../store/PostListContext";
 
 const CreatePost = () => {
   const { addPost } = useContext(PostListContext);
+
+  const navigate = useNavigate();
 
   const userIdElement = useRef();
   const PostTitleElement = useRef();
@@ -36,11 +39,13 @@ const CreatePost = () => {
       }),
     })
       .then((res) => res.json())
-      .then((post) =>
-        addPost({
-          ...post,
-          reactions: Math.floor(Math.random() * 1000),
-        }),
+      .then(
+        (post) =>
+          addPost({
+            ...post,
+            reactions: Math.floor(Math.random() * 1000),
+          }),
+        navigate("/"),
       );
 
     userIdElement.current.value = "";

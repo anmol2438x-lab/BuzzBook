@@ -1,3 +1,10 @@
+import { FaHome, FaUserFriends } from "react-icons/fa";
+import { FaFacebookMessenger } from "react-icons/fa6";
+import { MdAddToPhotos } from "react-icons/md";
+import { PiFilmReelFill } from "react-icons/pi";
+import { RiNotification2Fill } from "react-icons/ri";
+import { NavLink } from "react-router-dom";
+
 const Header = () => {
   return (
     <header className="p-1 text-bg-dark header">
@@ -21,32 +28,67 @@ const Header = () => {
               <use xlinkHref="#bootstrap"></use>
             </svg>{" "}
           </a>{" "}
-          <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 d-flex justify-content-center gap-4 mb-md-0">
             {" "}
             <li>
-              <a href="#" className="nav-link px-2 text-secondary">
-                Home
-              </a>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  `nav-link px-2 ${isActive ? "active" : ""}`
+                }
+              >
+                <FaHome />
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/reels"
+                className={({ isActive }) =>
+                  `nav-link px-2 ${isActive ? "active" : ""}`
+                }
+              >
+                <PiFilmReelFill />
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/create-post"
+                className={({ isActive }) =>
+                  `nav-link px-2 ${isActive ? "active" : ""}`
+                }
+              >
+                <MdAddToPhotos />
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/friends"
+                className={({ isActive }) =>
+                  `nav-link px-2 ${isActive ? "active" : ""}`
+                }
+              >
+                <FaUserFriends />
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/msg"
+                className={({ isActive }) =>
+                  `nav-link px-2 ${isActive ? "active" : ""}`
+                }
+              >
+                <FaFacebookMessenger />
+              </NavLink>
             </li>{" "}
             <li>
-              <a href="#" className="nav-link px-2 text-white">
-                Features
-              </a>
-            </li>{" "}
-            <li>
-              <a href="#" className="nav-link px-2 text-white">
-                Pricing
-              </a>
-            </li>{" "}
-            <li>
-              <a href="#" className="nav-link px-2 text-white">
-                FAQs
-              </a>
-            </li>{" "}
-            <li>
-              <a href="#" className="nav-link px-2 text-white">
-                About
-              </a>
+              <NavLink
+                to="/notification"
+                className={({ isActive }) =>
+                  `nav-link px-2 ${isActive ? "active" : ""}`
+                }
+              >
+                <RiNotification2Fill />
+              </NavLink>
             </li>{" "}
           </ul>{" "}
           <form
@@ -56,19 +98,27 @@ const Header = () => {
             {" "}
             <input
               type="search"
-              className="form-control form-control-dark text-bg-dark"
+              className="form-control "
               placeholder="Search..."
               aria-label="Search"
             />{" "}
           </form>{" "}
           <div className="text-end">
             {" "}
-            <button type="button" className="btn btn-outline-light me-2">
+            <a
+              href="https://full-stack-todo-gray.vercel.app/"
+              target="_blank"
+              className="btn me-2 loginBtn"
+            >
               Login
-            </button>{" "}
-            <button type="button" className="btn btn-warning">
+            </a>
+            <a
+              href="https://full-stack-todo-gray.vercel.app/"
+              target="_blank"
+              className="btn signBtn"
+            >
               Sign-up
-            </button>{" "}
+            </a>
           </div>{" "}
         </div>{" "}
       </div>{" "}
