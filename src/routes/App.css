@@ -249,7 +249,7 @@
 .dashboard-box {
   background: #a7efff;
   padding: 20px;
-  height: 90vh;
+  height: auto;
 
   box-shadow:
     6px 6px 12px rgba(0, 0, 0, 0.6),
